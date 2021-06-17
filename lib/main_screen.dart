@@ -46,7 +46,7 @@ class MainScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.grey.shade800,
+                            color: Colors.black,
                           ),
                         ),
                         SizedBox(height: 30.0),
@@ -55,6 +55,14 @@ class MainScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.0),
                               color: Colors.cyan.shade50.withOpacity(0.5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.cyan.shade200.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
                             ),
                             child: Column(
                                 children: [
@@ -199,12 +207,20 @@ class MainScreen extends StatelessWidget {
                           height: 15.0,
                         ),
                         Container(
-                          padding: EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20.0),
                             color: Colors.cyan.shade50.withOpacity(0.5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.cyan.shade200.withOpacity(0.5),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: Offset(0, 3),
+                              ),
+                            ],
                           ),
-                            child: ListView.builder(
+                            child: ListView.separated(
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
                               itemBuilder: (BuildContext context, int index) {
@@ -212,13 +228,43 @@ class MainScreen extends StatelessWidget {
                                     child: ClipRRect(
                                         child: Column(
                                             children: [
-                                              Text(newsList[index].title),
-                                              Text(newsList[index].date),
-                                              Text(newsList[index].description),
+                                              Text(
+                                                newsList[index].title,
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: 4.0,
+                                              ),
+                                              Text(
+                                                newsList[index].date,
+                                                textAlign: TextAlign.left,
+                                                style: TextStyle(
+                                                  fontSize: 11.0,
+                                                  fontWeight: FontWeight.w300
+                                                )
+                                              ),
+                                              SizedBox(
+                                                height: 4.0,
+                                              ),
+                                              Text(
+                                                newsList[index].description,
+                                                textAlign: TextAlign.justify,
+                                                style: TextStyle(fontSize: 13.0),
+                                              ),
+                                              SizedBox(
+                                                height: 4.0,
+                                              ),
                                             ]
                                         )
                                     )
                                 );
+                              },
+                              separatorBuilder: (BuildContext context, int index) {
+                                return Divider();
                               },
                               itemCount: newsList.length,
                             )
