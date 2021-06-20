@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sistem_akademik/news.dart';
+import 'package:flutter/rendering.dart';
+import 'package:sistem_akademik/graduation_screen.dart';
+import 'package:sistem_akademik/model/news.dart';
+import 'package:sistem_akademik/profile_screen.dart';
+import 'package:sistem_akademik/finance_screen.dart';
 
 var username = 'Mohamad Daffa Argakoesoemah';
 
@@ -26,14 +30,8 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/background.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ), SingleChildScrollView(
+          BackgroundImage(),
+          SingleChildScrollView(
             child: SafeArea(
               child:
               Container(
@@ -65,18 +63,28 @@ class MainScreen extends StatelessWidget {
                               ],
                             ),
                             child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Column(
                                           children: [
-                                            Icon(
-                                              Icons.account_circle,
-                                              size: 40.0,
-                                              color: Colors.blue,
+                                            IconButton(
+                                              padding: EdgeInsets.all(0),
+                                              icon: Icon(
+                                                Icons.account_circle,
+                                                size: 40.0,
+                                                color: Colors.blue,
+                                              ),
+                                              onPressed: () {
+                                                Navigator.push(context,
+                                                  MaterialPageRoute(builder: (context) {
+                                                    return ProfileScreen();
+                                                  }));
+                                              }
                                             ),
-                                            SizedBox(height: 8.0),
                                             Text(
                                                 'Profil',
                                                 style: TextStyle(
@@ -88,12 +96,20 @@ class MainScreen extends StatelessWidget {
                                         ),
                                         Column(
                                           children: [
-                                            Icon(
-                                              Icons.monetization_on,
-                                              size: 40.0,
-                                              color: Colors.green,
+                                            IconButton(
+                                              padding: EdgeInsets.all(0),
+                                                icon: Icon(
+                                                  Icons.monetization_on,
+                                                  size: 40.0,
+                                                  color: Colors.green,
+                                                ),
+                                                onPressed: () {
+                                                  Navigator.push(context,
+                                                      MaterialPageRoute(builder: (context) {
+                                                        return FinanceScreen();
+                                                      }));
+                                                }
                                             ),
-                                            SizedBox(height: 8.0),
                                             Text(
                                                 'Keuangan',
                                                 style: TextStyle(
@@ -145,10 +161,19 @@ class MainScreen extends StatelessWidget {
                                       children: [
                                         Column(
                                             children: [
-                                              Icon(
-                                                Icons.school,
-                                                size: 40.0,
-                                                color: Colors.blue.shade900,
+                                              IconButton(
+                                                  padding: EdgeInsets.all(0),
+                                                  icon: Icon(
+                                                    Icons.school,
+                                                    size: 40.0,
+                                                    color: Colors.blue.shade900,
+                                                  ),
+                                                  onPressed: () {
+                                                    Navigator.push(context,
+                                                        MaterialPageRoute(builder: (context) {
+                                                          return GraduationScreen();
+                                                        }));
+                                                  }
                                               ),
                                               SizedBox(height: 8.0),
                                               Text(
@@ -224,43 +249,48 @@ class MainScreen extends StatelessWidget {
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
                               itemBuilder: (BuildContext context, int index) {
-                                return Expanded(
-                                    child: ClipRRect(
-                                        child: Column(
-                                            children: [
-                                              Text(
-                                                newsList[index].title,
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  fontSize: 15.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                height: 4.0,
-                                              ),
-                                              Text(
-                                                newsList[index].date,
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                  fontSize: 11.0,
-                                                  fontWeight: FontWeight.w300
-                                                )
-                                              ),
-                                              SizedBox(
-                                                height: 4.0,
-                                              ),
-                                              Text(
-                                                newsList[index].description,
-                                                textAlign: TextAlign.justify,
-                                                style: TextStyle(fontSize: 13.0),
-                                              ),
-                                              SizedBox(
-                                                height: 4.0,
-                                              ),
-                                            ]
+                                return Flex(
+                                  direction: Axis.horizontal,
+                                  children: [
+                                    Expanded(
+                                        child: ClipRRect(
+                                            child: Column(
+                                                children: [
+                                                  Text(
+                                                    newsList[index].title,
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      fontSize: 15.0,
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4.0,
+                                                  ),
+                                                  Text(
+                                                      newsList[index].date,
+                                                      textAlign: TextAlign.left,
+                                                      style: TextStyle(
+                                                          fontSize: 11.0,
+                                                          fontWeight: FontWeight.w300
+                                                      )
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4.0,
+                                                  ),
+                                                  Text(
+                                                    newsList[index].description,
+                                                    textAlign: TextAlign.justify,
+                                                    style: TextStyle(fontSize: 13.0),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 4.0,
+                                                  ),
+                                                ]
+                                            )
                                         )
-                                    )
+                                    ),
+                                  ]
                                 );
                               },
                               separatorBuilder: (BuildContext context, int index) {
