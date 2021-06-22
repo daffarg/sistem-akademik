@@ -5,6 +5,7 @@ import 'package:sistem_akademik/graduation_screen.dart';
 import 'package:sistem_akademik/model/news.dart';
 import 'package:sistem_akademik/profile_screen.dart';
 import 'package:sistem_akademik/finance_screen.dart';
+import 'package:sistem_akademik/study_plan_screen.dart';
 
 var username = 'Mohamad Daffa Argakoesoemah';
 
@@ -42,9 +43,10 @@ class MainScreen extends StatelessWidget {
                         Text(
                           'Selamat Datang, $username!',
                           style: TextStyle(
+                            fontFamily: 'NotoSansKR',
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            color: Colors.indigo.shade900,
                           ),
                         ),
                         SizedBox(height: 30.0),
@@ -52,15 +54,7 @@ class MainScreen extends StatelessWidget {
                             padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.cyan.shade50.withOpacity(0.5),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.cyan.shade200.withOpacity(0.5),
-                                  spreadRadius: 5,
-                                  blurRadius: 7,
-                                  offset: Offset(0, 3),
-                                ),
-                              ],
+                              color: Colors.white.withOpacity(0.1),
                             ),
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -187,10 +181,19 @@ class MainScreen extends StatelessWidget {
                                         ),
                                         Column(
                                             children: [
-                                              Icon(
-                                                Icons.web_outlined,
-                                                size: 40.0,
-                                                color: Colors.orange.shade600,
+                                              IconButton(
+                                                padding: EdgeInsets.all(0),
+                                                icon: Icon(
+                                                  Icons.web_outlined,
+                                                  size: 40.0,
+                                                  color: Colors.orange.shade600,
+                                                ),
+                                                onPressed: () {
+                                                  Navigator.push(context,
+                                                  MaterialPageRoute(builder: (context) {
+                                                    return StudyPlanScreen();
+                                                  }));
+                                                },
                                               ),
                                               SizedBox(height: 8.0),
                                               Text(
@@ -227,7 +230,13 @@ class MainScreen extends StatelessWidget {
                         SizedBox(
                             height: 15.0
                         ),
-                        Text('Berita', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),),
+                        Text('Berita',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17.0,
+                            color: Colors.indigo.shade900,
+                          ),
+                        ),
                         SizedBox(
                           height: 15.0,
                         ),
@@ -235,15 +244,7 @@ class MainScreen extends StatelessWidget {
                           padding: EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20.0),
-                            color: Colors.cyan.shade50.withOpacity(0.5),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.cyan.shade200.withOpacity(0.5),
-                                spreadRadius: 5,
-                                blurRadius: 7,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
+                            color: Colors.white.withOpacity(0.1),
                           ),
                             child: ListView.separated(
                               shrinkWrap: true,
@@ -261,7 +262,7 @@ class MainScreen extends StatelessWidget {
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: 15.0,
-                                                      fontWeight: FontWeight.w500,
+                                                      fontWeight: FontWeight.w600,
                                                     ),
                                                   ),
                                                   SizedBox(

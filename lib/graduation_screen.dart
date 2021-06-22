@@ -10,6 +10,13 @@ class GraduationScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.blueGrey.shade900,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Stack(
         children: [
@@ -23,6 +30,7 @@ class GraduationScreen extends StatelessWidget {
                   child: Text(
                     'Wisuda',
                     style: TextStyle(
+                      fontFamily: 'NotoSansKR',
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -33,15 +41,7 @@ class GraduationScreen extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.cyan.shade50.withOpacity(0.5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.cyan.shade200.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
+                      color: Colors.white.withOpacity(0.1),
                     ),
                     child: Flex(
                         direction: Axis.horizontal,

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sistem_akademik/main_screen.dart';
 import 'package:sistem_akademik/model/student_data.dart';
@@ -20,6 +21,13 @@ class _FinanceScreenState extends State<FinanceScreen> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            color: Colors.blueGrey.shade900,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
         ),
         body: Stack(
           children: [
@@ -34,14 +42,21 @@ class _FinanceScreenState extends State<FinanceScreen> {
                       'Keuangan',
                       textAlign: TextAlign.left,
                       style: TextStyle(
+                        fontFamily: 'NotoSansKR',
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       )
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.all(15.0),
+                    padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 7.0),
+                    margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 7.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      color: Colors.white.withOpacity(0.1),
+                    ),
                     child: DropdownButton(
+                      dropdownColor: Colors.white.withOpacity(0.9),
                       isExpanded: true,
                       value: selectedSemester,
                       icon: const Icon(Icons.arrow_downward),
@@ -50,7 +65,7 @@ class _FinanceScreenState extends State<FinanceScreen> {
                       style: TextStyle(color: Colors.grey.shade800),
                       underline: Container(
                         height: 2,
-                        color: Colors.cyan,
+                        color: Colors.indigo.shade100,
                       ),
                       onChanged : (String? newValue) {
                         setState(() {
@@ -71,38 +86,45 @@ class _FinanceScreenState extends State<FinanceScreen> {
                     margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.cyan.shade50.withOpacity(0.5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.cyan.shade200.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
+                      color: Colors.white.withOpacity(0.1),
                     ),
                     child: Flex(
                       direction: Axis.horizontal,
                       children: [
                         Flexible(
                           child: Table(
-                            border: TableBorder(horizontalInside: BorderSide(color: Colors.black, width: 0.1)),
+                            border: TableBorder(horizontalInside: BorderSide(color: Colors.black, width: 0.05)),
                             children: [
                               TableRow(
                                 children: [
-                                  Text('Tagihan'),
+                                  Text(
+                                    'Tagihan',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
                                   Text(financeList[int.parse(selectedSemester.substring(selectedSemester.length-1))-1].billing),
                                 ],
                               ),
                               TableRow(
                                 children: [
-                                  Text('Status'),
+                                  Text(
+                                    'Status',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
                                   Text(financeList[int.parse(selectedSemester.substring(selectedSemester.length-1))-1].paid),
                                 ]
                               ),
                               TableRow(
                                 children: [
-                                  Text('Cicilan'),
+                                  Text(
+                                    'Cicilan',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
                                   Text(financeList[int.parse(selectedSemester.substring(selectedSemester.length-1))-1].installment),
                                 ],
                               ),

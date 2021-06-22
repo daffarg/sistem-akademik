@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sistem_akademik/main_screen.dart';
+import 'package:sistem_akademik/model/student_data.dart';
 
 class ProfileScreen extends StatelessWidget {
 
@@ -10,6 +11,13 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.blueGrey.shade900,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        )
       ),
       body: Stack(
         children: [
@@ -24,8 +32,10 @@ class ProfileScreen extends StatelessWidget {
                       'Profil Mahasiswa',
                       textAlign: TextAlign.left,
                       style: TextStyle(
+                        fontFamily: 'NotoSansKR',
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
+                        color: Colors.blueGrey.shade900,
                       ),
                     ),
                   ),
@@ -38,15 +48,7 @@ class ProfileScreen extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.cyan.shade50.withOpacity(0.5),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.cyan.shade200.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
+                        color: Colors.white.withOpacity(0.1),
                       ),
                     child:
                         Flex(
@@ -54,42 +56,94 @@ class ProfileScreen extends StatelessWidget {
                           children: [
                             Flexible(
                               child: Table(
-                                border: TableBorder(horizontalInside: BorderSide(color: Colors.black, width: 0.1)),
+                                border: TableBorder(horizontalInside: BorderSide(color: Colors.black, width: 0.05)),
                                 children: [
                                   TableRow(
                                       children: [
-                                        Text('Nama'),
-                                        Text('Mohamad Daffa Argakoesoemah'),
+                                        Text(
+                                          'Nama',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        Text(studentData.name),
+                                      ]
+                                  ),
+                                  TableRow(
+                                    children: [
+                                      Text(
+                                        'NIM',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Text(studentData.nim),
+                                    ]
+                                  ),
+                                  TableRow(
+                                      children: [
+                                        Text(
+                                          'Fakultas',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        Text(studentData.faculty),
                                       ]
                                   ),
                                   TableRow(
                                       children: [
-                                        Text('Fakultas'),
-                                        Text('STEI'),
+                                        Text(
+                                          'Program Studi',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                          )
+                                        ),
+                                        Text(studentData.major),
                                       ]
                                   ),
                                   TableRow(
                                       children: [
-                                        Text('Program Studi'),
-                                        Text('Teknik Informatika'),
+                                        Text(
+                                          'Kelas',
+                                          style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        Text(studentData.program),
+                                      ]
+                                  ),
+                                  TableRow(
+                                    children: [
+                                      Text(
+                                        'Dosen Wali',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Text(studentData.lecturer),
+                                    ],
+                                  ),
+                                  TableRow(
+                                      children: [
+                                        Text(
+                                          'IPK',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        Text((studentData.gpa).toString()),
                                       ]
                                   ),
                                   TableRow(
                                       children: [
-                                        Text('Kelas'),
-                                        Text('Reguler'),
-                                      ]
-                                  ),
-                                  TableRow(
-                                      children: [
-                                        Text('IPK'),
-                                        Text('4.0'),
-                                      ]
-                                  ),
-                                  TableRow(
-                                      children: [
-                                        Text('SKS'),
-                                        Text('Lulus 36 SKS'),
+                                        Text(
+                                          'SKS',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        Text('Lulus ${(studentData.sks).toString()} SKS'),
                                       ]
                                   ),
                                 ],
