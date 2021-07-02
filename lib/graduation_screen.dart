@@ -12,7 +12,7 @@ class GraduationScreen extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          color: Colors.blueGrey.shade900,
+          color: Colors.indigo.shade900,
           onPressed: () {
             Navigator.pop(context);
           },
@@ -33,6 +33,7 @@ class GraduationScreen extends StatelessWidget {
                       fontFamily: 'NotoSansKR',
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
+                      color: Colors.indigo.shade900,
                     ),
                   ),
                 ),
@@ -43,22 +44,22 @@ class GraduationScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.white.withOpacity(0.1),
                     ),
-                    child: Flex(
-                        direction: Axis.horizontal,
-                        children: [
-                          Flexible(
-                            child: Text(
-                              'Anda belum terdaftar sebagai peserta wisuda',
-                              )
-                            )
-                        ]
-                    )
-                )
-              ]
-            )
-          )
-        ]
-      )
+                  child: Flex(
+                    direction: Axis.horizontal,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          'Anda belum terdaftar sebagai peserta wisuda',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

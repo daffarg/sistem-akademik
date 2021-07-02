@@ -22,39 +22,24 @@ var newsList = [
     description: 'Berdasarkan anjuran SATGAS COVID-19 Kabupaten Bandung dan PPKM, wisuda kedua tahun akademik 2021/2021 akan dilaksanakan secara daring melalui video conference. Wisuda juga dapat disaksikan secara langsung melalui media YouTube.',
   ),
   News(
-    title: 'Lorem ipsum',
-    date: '31 Desember 2020',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, purus ac elementum pretium, velit turpis ullamcorper turpis, et fringilla felis urna at mi. Quisque ut semper mi. Curabitur gravida ultrices eros, vel scelerisque enim sagittis sed. Nunc non lacus id arcu viverra tempus. In fermentum mi at purus pellentesque eleifend. Phasellus viverra varius pretium. Vivamus non metus sollicitudin, consectetur lectus id, consectetur dolor.',
+    title: 'Pendaftaran Semester Pendek 2020/2021',
+    date: '5 Juni 2021',
+    description: 'Pendaftaran Semester Pendek Tahun Akdemik 2020/2021 dapat dilakukan pada tanggal 7 Juni - 10 Juni 2021.',
   ),
   News(
-    title: 'Lorem ipsum',
-    date: '31 Desember 2020',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, purus ac elementum pretium, velit turpis ullamcorper turpis, et fringilla felis urna at mi. Quisque ut semper mi. Curabitur gravida ultrices eros, vel scelerisque enim sagittis sed. Nunc non lacus id arcu viverra tempus. In fermentum mi at purus pellentesque eleifend. Phasellus viverra varius pretium. Vivamus non metus sollicitudin, consectetur lectus id, consectetur dolor.',
+    title: 'Ujian Akhir Semester II 2020/2021',
+    date: '15 Mei 2021',
+    description: 'Ujian Akhir Semester II 2020/2021 akan dilaksanakan pada tanggal 20 Mei - 28 Mei 2021.',
   ),
   News(
-    title: 'Lorem ipsum',
-    date: '31 Desember 2020',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, purus ac elementum pretium, velit turpis ullamcorper turpis, et fringilla felis urna at mi. Quisque ut semper mi. Curabitur gravida ultrices eros, vel scelerisque enim sagittis sed. Nunc non lacus id arcu viverra tempus. In fermentum mi at purus pellentesque eleifend. Phasellus viverra varius pretium. Vivamus non metus sollicitudin, consectetur lectus id, consectetur dolor.',
+    title: 'Hari Pertama Perkuliahan Semester II  2020/2021',
+    date: '5 Januari 2021',
+    description: 'Perkuliahan Semester II 2020/2021 mulai akan dilaksanakan pada tanggal 25 Januari 2021. Perkuliahan akan dilakukan secara daring mengingat pandemi COVID-19 masih merebak.',
   ),
   News(
-    title: 'Lorem ipsum',
-    date: '31 Desember 2020',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, purus ac elementum pretium, velit turpis ullamcorper turpis, et fringilla felis urna at mi. Quisque ut semper mi. Curabitur gravida ultrices eros, vel scelerisque enim sagittis sed. Nunc non lacus id arcu viverra tempus. In fermentum mi at purus pellentesque eleifend. Phasellus viverra varius pretium. Vivamus non metus sollicitudin, consectetur lectus id, consectetur dolor.',
-  ),
-  News(
-    title: 'Lorem ipsum',
-    date: '31 Desember 2020',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, purus ac elementum pretium, velit turpis ullamcorper turpis, et fringilla felis urna at mi. Quisque ut semper mi. Curabitur gravida ultrices eros, vel scelerisque enim sagittis sed. Nunc non lacus id arcu viverra tempus. In fermentum mi at purus pellentesque eleifend. Phasellus viverra varius pretium. Vivamus non metus sollicitudin, consectetur lectus id, consectetur dolor.',
-  ),
-  News(
-    title: 'Lorem ipsum',
-    date: '31 Desember 2020',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, purus ac elementum pretium, velit turpis ullamcorper turpis, et fringilla felis urna at mi. Quisque ut semper mi. Curabitur gravida ultrices eros, vel scelerisque enim sagittis sed. Nunc non lacus id arcu viverra tempus. In fermentum mi at purus pellentesque eleifend. Phasellus viverra varius pretium. Vivamus non metus sollicitudin, consectetur lectus id, consectetur dolor.',
-  ),
-  News(
-    title: 'Lorem ipsum',
-    date: '31 Desember 2020',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, purus ac elementum pretium, velit turpis ullamcorper turpis, et fringilla felis urna at mi. Quisque ut semper mi. Curabitur gravida ultrices eros, vel scelerisque enim sagittis sed. Nunc non lacus id arcu viverra tempus. In fermentum mi at purus pellentesque eleifend. Phasellus viverra varius pretium. Vivamus non metus sollicitudin, consectetur lectus id, consectetur dolor.',
+    title: 'Libur Hari Raya Natal dan Tahun Baru ',
+    date: '10 Desember 2020',
+    description: 'Libur hari raya Natal dan tahun baru jatuh pada tanggal 20 Desember 2020 sampai 5 Januari 2021.'
   ),
 ];
 
